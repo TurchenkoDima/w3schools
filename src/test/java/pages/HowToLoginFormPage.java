@@ -52,24 +52,27 @@ public class HowToLoginFormPage extends AbstractPage {
 
     /**
      * Type 'userName'
+     *
      * @param userName
      */
     public void typeUserName(String userName) {
-        logger.info(String.format("Type '%s' to '%s'", userName,  userNameInput.toString()));
+        logger.info(String.format("Type '%s' to '%s'", userName, userNameInput.toString()));
         userNameInput.sendKeys(userName);
     }
 
     /**
      * Type 'password'
+     *
      * @param password
      */
     public void typePassword(String password) {
-        logger.info(String.format("Type '%s' to '%s'", password,  passwordInput.toString()));
+        logger.info(String.format("Type '%s' to '%s'", password, passwordInput.toString()));
         passwordInput.sendKeys(password);
     }
 
     /**
      * Set 'Remember me' checkbox to state
+     *
      * @param shouldBeSelected - true if selected
      */
     public void rememberMeSelected(boolean shouldBeSelected) {
@@ -79,7 +82,7 @@ public class HowToLoginFormPage extends AbstractPage {
                 rememberMeCheckBox.click();
             }
         } else {
-            if (rememberMeCheckBox.isSelected()){
+            if (rememberMeCheckBox.isSelected()) {
                 rememberMeCheckBox.click();
             }
         }
@@ -91,11 +94,12 @@ public class HowToLoginFormPage extends AbstractPage {
 
     /**
      * Verify that 'Login' modal window is opened
+     *
      * @param shouldBeOpened - true if opened
      */
     public void verifyLoginModalIsOpened(boolean shouldBeOpened) {
         logger.info(String.format("Verify modal window state. \nShould be opened:'%s'", shouldBeOpened));
-        if(shouldBeOpened) {
+        if (shouldBeOpened) {
             Assert.assertTrue(loginModalWindow.getAttribute("style").contains("block"));
         } else {
             Assert.assertFalse(loginModalWindow.getAttribute("style").contains("block"));

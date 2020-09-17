@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 import static browsers.BrowserManager.getBrowser;
 
 public class DriverManager {
-    protected static final Logger logger = LogManager.getRootLogger();
     private static WebDriver webDriver;
     private static final String GECKO_WEBDRIVER = "webdriver.gecko.driver";
     private static final String GECKODRIVER_PATH = "src/test/resources/drivers/firefox/geckodriver";
@@ -19,6 +18,8 @@ public class DriverManager {
     private static final String CHROMEDRIVER_PATH = "src/test/resources/drivers/chrome/chromedriver";
     private static final String CHROME = "chrome";
     private static final String FIREFOX = "firefox";
+
+    protected static final Logger logger = LogManager.getRootLogger();
 
     public static void initDriver(String browser) {
         logger.info(String.format("Init driver: %s", browser));
@@ -37,7 +38,7 @@ public class DriverManager {
     }
 
     public static WebDriver getDriver() {
-        if(webDriver == null) {
+        if (webDriver == null) {
             initDriver(getBrowser());
         }
         return webDriver;

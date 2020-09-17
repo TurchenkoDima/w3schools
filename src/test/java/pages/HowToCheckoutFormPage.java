@@ -69,9 +69,9 @@ public class HowToCheckoutFormPage extends AbstractPage {
      */
 
     public void typeAllFieldsInForm(String formName, String information) {
-        if(formName.equals("Billing Address")){
+        if (formName.equals("Billing Address")) {
             typeAllFieldsInBillingAddress(information);
-        } else if(formName.equals("Payment")) {
+        } else if (formName.equals("Payment")) {
             typeAllFieldsInPayment(information);
         }
     }
@@ -108,6 +108,7 @@ public class HowToCheckoutFormPage extends AbstractPage {
 
     /**
      * Verify count of items in cart
+     *
      * @param expectedCount
      */
     public void countOfItemsInCart(int expectedCount) {
@@ -117,6 +118,7 @@ public class HowToCheckoutFormPage extends AbstractPage {
 
     /**
      * Verify total amount in cart
+     *
      * @param expectedAmount
      */
     public void totalAmountInCart(int expectedAmount) {
